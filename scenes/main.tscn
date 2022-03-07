@@ -1,0 +1,918 @@
+[gd_scene load_steps=107 format=2]
+
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/environment/level3.png" type="Texture" id=2]
+[ext_resource path="res://assets/environment/level1.png" type="Texture" id=3]
+[ext_resource path="res://scenes/level.gd" type="Script" id=4]
+[ext_resource path="res://scenes/main.gd" type="Script" id=5]
+[ext_resource path="res://scenes/camera.gd" type="Script" id=6]
+[ext_resource path="res://assets/ui/rightnormal.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/leftnormal.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/leftpressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/jumppressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/rightpressed.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/jumpnormal.png" type="Texture" id=12]
+[ext_resource path="res://assets/environment/level5.png" type="Texture" id=13]
+[ext_resource path="res://assets/environment/level2.png" type="Texture" id=14]
+[ext_resource path="res://assets/environment/level4.png" type="Texture" id=15]
+[ext_resource path="res://assets/environment/level6.png" type="Texture" id=16]
+[ext_resource path="res://assets/environment/level7.png" type="Texture" id=17]
+[ext_resource path="res://assets/environment/level8.png" type="Texture" id=18]
+[ext_resource path="res://assets/environment/level9.png" type="Texture" id=19]
+[ext_resource path="res://assets/environment/level10.png" type="Texture" id=20]
+[ext_resource path="res://assets/environment/level13.png" type="Texture" id=21]
+[ext_resource path="res://assets/environment/level12.png" type="Texture" id=22]
+[ext_resource path="res://assets/environment/level11.png" type="Texture" id=23]
+[ext_resource path="res://assets/environment/level14.png" type="Texture" id=24]
+[ext_resource path="res://assets/environment/level17.png" type="Texture" id=25]
+[ext_resource path="res://assets/environment/level18.png" type="Texture" id=26]
+[ext_resource path="res://assets/environment/level19.png" type="Texture" id=27]
+[ext_resource path="res://assets/environment/level15.png" type="Texture" id=28]
+[ext_resource path="res://assets/environment/level16.png" type="Texture" id=29]
+[ext_resource path="res://scenes/music.gd" type="Script" id=30]
+[ext_resource path="res://sound/melo_1_middle.mp3" type="AudioStream" id=31]
+[ext_resource path="res://sound/fast_arp.mp3" type="AudioStream" id=32]
+[ext_resource path="res://sound/bass.mp3" type="AudioStream" id=33]
+[ext_resource path="res://sound/medium_arp.mp3" type="AudioStream" id=34]
+[ext_resource path="res://sound/slow_arp.mp3" type="AudioStream" id=35]
+[ext_resource path="res://sound/drums_chiptune.mp3" type="AudioStream" id=36]
+[ext_resource path="res://sound/bleep_bloop.mp3" type="AudioStream" id=37]
+[ext_resource path="res://scenes/extra_sound.gd" type="Script" id=38]
+[ext_resource path="res://sound/melo_2_middle.mp3" type="AudioStream" id=39]
+[ext_resource path="res://sound/melo_3_middle.mp3" type="AudioStream" id=40]
+[ext_resource path="res://assets/ui/settingspressed.png" type="Texture" id=41]
+[ext_resource path="res://assets/ui/settingsnormal.png" type="Texture" id=42]
+[ext_resource path="res://scenes/menu.gd" type="Script" id=43]
+[ext_resource path="res://assets/ui/menu/continuenormal.png" type="Texture" id=44]
+[ext_resource path="res://assets/ui/menu/continuepressed.png" type="Texture" id=45]
+[ext_resource path="res://assets/ui/menu/shuffle_levelpressed.png" type="Texture" id=46]
+[ext_resource path="res://assets/ui/menu/shuffle_levelnormal.png" type="Texture" id=47]
+[ext_resource path="res://assets/ui/menu/spiritsnormal.png" type="Texture" id=48]
+[ext_resource path="res://assets/ui/menu/spiritspressed.png" type="Texture" id=49]
+[ext_resource path="res://scenes/menu/spirits.gd" type="Script" id=50]
+[ext_resource path="res://scenes/menu/spirit_button.tscn" type="PackedScene" id=51]
+[ext_resource path="res://assets/ui/spirits/resetnormal.png" type="Texture" id=52]
+[ext_resource path="res://assets/ui/spirits/resetpressed.png" type="Texture" id=53]
+[ext_resource path="res://assets/ui/spirits/backnormal.png" type="Texture" id=54]
+[ext_resource path="res://assets/ui/spirits/backpressed.png" type="Texture" id=55]
+[ext_resource path="res://scenes/spirit_sub_menu.gd" type="Script" id=56]
+[ext_resource path="res://scenes/text_display.tscn" type="PackedScene" id=57]
+[ext_resource path="res://assets/ui/spirits/text_backgroundnormal.png" type="Texture" id=58]
+[ext_resource path="res://assets/ui/spirits/spirit_backpressed.png" type="Texture" id=59]
+[ext_resource path="res://assets/ui/spirits/spirit_backnormal.png" type="Texture" id=60]
+[ext_resource path="res://assets/ui/menu/colorsnormal.png" type="Texture" id=61]
+[ext_resource path="res://assets/ui/menu/colorspressed.png" type="Texture" id=62]
+[ext_resource path="res://scenes/colors.gd" type="Script" id=63]
+[ext_resource path="res://assets/ui/colors/white_square.png" type="Texture" id=64]
+[ext_resource path="res://assets/ui/colors/normalnormal.png" type="Texture" id=65]
+[ext_resource path="res://assets/ui/colors/normalpressed.png" type="Texture" id=66]
+[ext_resource path="res://assets/ui/colors/dashnormal.png" type="Texture" id=67]
+[ext_resource path="res://assets/ui/colors/dashpressed.png" type="Texture" id=68]
+[ext_resource path="res://assets/ui/colors/wallnormal.png" type="Texture" id=69]
+[ext_resource path="res://assets/ui/colors/wallpressed.png" type="Texture" id=70]
+[ext_resource path="res://assets/ui/colors/backnormal.png" type="Texture" id=71]
+[ext_resource path="res://assets/ui/colors/backpressed.png" type="Texture" id=72]
+[ext_resource path="res://scenes/colors_sub_menu.gd" type="Script" id=73]
+[ext_resource path="res://assets/ui/colors/sub_menu/RGB_scale.png" type="Texture" id=74]
+[ext_resource path="res://assets/ui/colors/sub_menu/HSV_scale.png" type="Texture" id=75]
+[ext_resource path="res://assets/ui/colors/sub_menu/cursor.png" type="Texture" id=76]
+[ext_resource path="res://scenes/player/animations.tscn" type="PackedScene" id=77]
+[ext_resource path="res://assets/ui/colors/sub_menu/resetpressed.png" type="Texture" id=78]
+[ext_resource path="res://assets/ui/colors/sub_menu/backpressed.png" type="Texture" id=79]
+[ext_resource path="res://assets/ui/colors/sub_menu/HSVpressed.png" type="Texture" id=80]
+[ext_resource path="res://assets/ui/colors/sub_menu/HSVnormal.png" type="Texture" id=81]
+[ext_resource path="res://assets/ui/colors/sub_menu/backnormal.png" type="Texture" id=82]
+[ext_resource path="res://assets/ui/colors/sub_menu/resetnormal.png" type="Texture" id=83]
+[ext_resource path="res://assets/ui/colors/sub_menu/RGBnormal.png" type="Texture" id=84]
+[ext_resource path="res://assets/ui/colors/sub_menu/RGBpressed.png" type="Texture" id=85]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0, 0, 12, 0, 12, 12, 0, 12 )
+
+[sub_resource type="TileSet" id=20]
+0/name = "level1.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 12, 12 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "level2.png 1"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 12, 12 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "level3.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 12, 12 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 12 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "level4.png 3"
+3/texture = ExtResource( 15 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 12, 12 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 13 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "level5.png 4"
+4/texture = ExtResource( 13 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 12, 12 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 14 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "level6.png 5"
+5/texture = ExtResource( 16 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 12, 12 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 15 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "level7.png 6"
+6/texture = ExtResource( 17 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 12, 12 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 16 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "level8.png 7"
+7/texture = ExtResource( 18 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 12, 12 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 17 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "level9.png 8"
+8/texture = ExtResource( 19 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 12, 12 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 18 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "level10.png 9"
+9/texture = ExtResource( 20 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 12, 12 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 19 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "level11.png 10"
+10/texture = ExtResource( 23 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 12, 12 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 3 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+11/name = "level12.png 11"
+11/texture = ExtResource( 22 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 12, 12 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 4 )
+11/shape_one_way = false
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0
+12/name = "level13.png 12"
+12/texture = ExtResource( 21 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 0, 12, 12 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape = SubResource( 5 )
+12/shape_one_way = false
+12/shape_one_way_margin = 1.0
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+12/z_index = 0
+13/name = "level14.png 13"
+13/texture = ExtResource( 24 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 12, 12 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape = SubResource( 6 )
+13/shape_one_way = false
+13/shape_one_way_margin = 1.0
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+13/z_index = 0
+14/name = "level15.png 14"
+14/texture = ExtResource( 28 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 12, 12 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 7 )
+14/shape_one_way = false
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+14/z_index = 0
+15/name = "level16.png 15"
+15/texture = ExtResource( 29 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 12, 12 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape = SubResource( 8 )
+15/shape_one_way = false
+15/shape_one_way_margin = 1.0
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+15/z_index = 0
+16/name = "level17.png 16"
+16/texture = ExtResource( 25 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 12, 12 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape = SubResource( 9 )
+16/shape_one_way = false
+16/shape_one_way_margin = 1.0
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+16/z_index = 0
+17/name = "level18.png 17"
+17/texture = ExtResource( 26 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 12, 12 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 10 )
+17/shape_one_way = false
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+17/z_index = 0
+18/name = "level19.png 18"
+18/texture = ExtResource( 27 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 12, 12 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape = SubResource( 11 )
+18/shape_one_way = false
+18/shape_one_way_margin = 1.0
+18/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+18/z_index = 0
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ ExtResource( 75 ) ],
+"loop": true,
+"name": "HSV",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 74 ) ],
+"loop": true,
+"name": "RGB",
+"speed": 5.0
+} ]
+
+[node name="main" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
+z_index = 1
+z_as_relative = false
+
+[node name="level" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="tilemap" type="TileMap" parent="level"]
+tile_set = SubResource( 20 )
+cell_size = Vector2( 12, 12 )
+format = 1
+tile_data = PoolIntArray( -65532, 0, 0, 4, 0, 0, 65538, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0 )
+
+[node name="camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.2, 0.2 )
+script = ExtResource( 6 )
+
+[node name="text_display" parent="camera" instance=ExtResource( 57 )]
+margin_left = -96.0
+margin_right = 96.0
+autowrap = true
+
+[node name="left" type="TouchScreenButton" parent="camera"]
+normal = ExtResource( 8 )
+pressed = ExtResource( 9 )
+passby_press = true
+
+[node name="right" type="TouchScreenButton" parent="camera"]
+normal = ExtResource( 7 )
+pressed = ExtResource( 11 )
+passby_press = true
+
+[node name="jump" type="TouchScreenButton" parent="camera"]
+normal = ExtResource( 12 )
+pressed = ExtResource( 10 )
+passby_press = true
+
+[node name="settings" type="TouchScreenButton" parent="camera"]
+normal = ExtResource( 42 )
+pressed = ExtResource( 41 )
+passby_press = true
+
+[node name="music" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 30 )
+
+[node name="melody1" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 31 )
+volume_db = -80.0
+script = ExtResource( 38 )
+
+[node name="melody2" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 39 )
+volume_db = -80.0
+script = ExtResource( 38 )
+
+[node name="melody3" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 40 )
+volume_db = -80.0
+script = ExtResource( 38 )
+
+[node name="extra1" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 33 )
+volume_db = -80.0
+script = ExtResource( 38 )
+
+[node name="extra2" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 32 )
+script = ExtResource( 38 )
+
+[node name="extra3" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 34 )
+script = ExtResource( 38 )
+
+[node name="extra4" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 36 )
+script = ExtResource( 38 )
+
+[node name="extra5" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 35 )
+script = ExtResource( 38 )
+
+[node name="extra6" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 37 )
+script = ExtResource( 38 )
+
+[node name="menu" type="Node2D" parent="."]
+visible = false
+z_index = 2
+z_as_relative = false
+script = ExtResource( 43 )
+
+[node name="background_button" type="TouchScreenButton" parent="menu"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -160, -72 )
+scale = Vector2( 6.66667, 3 )
+z_index = -1
+z_as_relative = false
+normal = ExtResource( 12 )
+
+[node name="continue_level" type="TouchScreenButton" parent="menu"]
+position = Vector2( -40, -65 )
+normal = ExtResource( 44 )
+pressed = ExtResource( 45 )
+
+[node name="shuffle_level" type="TouchScreenButton" parent="menu"]
+position = Vector2( -40, -32 )
+normal = ExtResource( 47 )
+pressed = ExtResource( 46 )
+
+[node name="spirits" type="TouchScreenButton" parent="menu"]
+position = Vector2( -40, 2 )
+normal = ExtResource( 48 )
+pressed = ExtResource( 49 )
+
+[node name="colors" type="TouchScreenButton" parent="menu"]
+position = Vector2( -40, 36 )
+normal = ExtResource( 61 )
+pressed = ExtResource( 62 )
+
+[node name="spirits" type="Node2D" parent="."]
+visible = false
+z_index = 3
+z_as_relative = false
+script = ExtResource( 50 )
+
+[node name="background_button" type="TouchScreenButton" parent="spirits"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -160, -72 )
+scale = Vector2( 6.66667, 3 )
+z_index = -1
+z_as_relative = false
+normal = ExtResource( 12 )
+
+[node name="1" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( -78, -68 )
+
+[node name="2" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( -38, -68 )
+
+[node name="3" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( 2, -68 )
+
+[node name="4" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( 42, -68 )
+
+[node name="5" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( -78, -28 )
+
+[node name="6" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( -38, -28 )
+
+[node name="7" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( 2, -28 )
+
+[node name="8" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( 42, -28 )
+
+[node name="9" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( -78, 12 )
+
+[node name="10" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( -38, 12 )
+
+[node name="11" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( 2, 12 )
+
+[node name="12" parent="spirits" instance=ExtResource( 51 )]
+position = Vector2( 42, 12 )
+
+[node name="reset" type="TouchScreenButton" parent="spirits"]
+position = Vector2( 2, 52 )
+normal = ExtResource( 52 )
+pressed = ExtResource( 53 )
+
+[node name="back" type="TouchScreenButton" parent="spirits"]
+position = Vector2( -78, 52 )
+normal = ExtResource( 54 )
+pressed = ExtResource( 55 )
+
+[node name="spirit_sub_menu" type="Node2D" parent="."]
+visible = false
+z_index = 2
+script = ExtResource( 56 )
+
+[node name="background" type="TouchScreenButton" parent="spirit_sub_menu"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -158, -72 )
+scale = Vector2( 6.66667, 3 )
+z_index = -1
+z_as_relative = false
+normal = ExtResource( 12 )
+
+[node name="text_display" parent="spirit_sub_menu" instance=ExtResource( 57 )]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = -28.0
+margin_top = -44.0
+margin_right = 108.0
+margin_bottom = 44.0
+text = "Dfeffefefe
+fefeffffffffffffffffffffffffffffffffffffffff
+Fefef
+Fefe"
+align = 0
+autowrap = true
+
+[node name="TextBackgroundnormal" type="Sprite" parent="spirit_sub_menu/text_display"]
+position = Vector2( 68, 44 )
+scale = Vector2( 1.24138, 0.827586 )
+z_index = -1
+texture = ExtResource( 58 )
+
+[node name="spirit_button" parent="spirit_sub_menu" instance=ExtResource( 51 )]
+position = Vector2( -92, -40 )
+passby_press = true
+
+[node name="back_button" type="TouchScreenButton" parent="spirit_sub_menu"]
+position = Vector2( -92, 4 )
+normal = ExtResource( 60 )
+pressed = ExtResource( 59 )
+passby_press = true
+
+[node name="colors" type="Node2D" parent="."]
+visible = false
+z_index = 2
+script = ExtResource( 63 )
+
+[node name="background" type="TouchScreenButton" parent="colors"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -158, -72 )
+scale = Vector2( 6.66667, 3 )
+z_index = -1
+z_as_relative = false
+normal = ExtResource( 12 )
+
+[node name="normal_button" type="TouchScreenButton" parent="colors"]
+position = Vector2( -83, -25 )
+normal = ExtResource( 65 )
+pressed = ExtResource( 66 )
+
+[node name="dash_used_button" type="TouchScreenButton" parent="colors"]
+position = Vector2( 3, -25 )
+normal = ExtResource( 67 )
+pressed = ExtResource( 68 )
+
+[node name="wall_used_button" type="TouchScreenButton" parent="colors"]
+position = Vector2( -83, 0 )
+normal = ExtResource( 69 )
+pressed = ExtResource( 70 )
+
+[node name="all_used_button" type="TouchScreenButton" parent="colors"]
+position = Vector2( 3, 0 )
+normal = ExtResource( 69 )
+pressed = ExtResource( 70 )
+
+[node name="back" type="TouchScreenButton" parent="colors"]
+position = Vector2( -60, 26 )
+normal = ExtResource( 71 )
+pressed = ExtResource( 72 )
+
+[node name="normal_color" type="Sprite" parent="colors"]
+position = Vector2( -19.5, -14.5 )
+texture = ExtResource( 64 )
+
+[node name="dash_used_color" type="Sprite" parent="colors"]
+position = Vector2( 66.5, -14.5 )
+texture = ExtResource( 64 )
+
+[node name="wall_used_color" type="Sprite" parent="colors"]
+position = Vector2( -19.5, 10.5 )
+texture = ExtResource( 64 )
+
+[node name="all_used_color" type="Sprite" parent="colors"]
+position = Vector2( 66.5, 10.5 )
+texture = ExtResource( 64 )
+
+[node name="colors_sub_menu" type="Node2D" parent="."]
+visible = false
+z_index = 2
+script = ExtResource( 73 )
+
+[node name="background" type="TouchScreenButton" parent="colors_sub_menu"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -158, -72 )
+scale = Vector2( 6.66667, 3 )
+z_index = -1
+z_as_relative = false
+normal = ExtResource( 12 )
+
+[node name="scale_bg_button" type="TouchScreenButton" parent="colors_sub_menu"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -24, -44 )
+scale = Vector2( 2.5, 1.25 )
+z_index = -1
+z_as_relative = false
+normal = ExtResource( 12 )
+
+[node name="scale_bg" type="AnimatedSprite" parent="colors_sub_menu"]
+position = Vector2( 36, -14 )
+frames = SubResource( 21 )
+animation = "RGB"
+
+[node name="cursor0" type="TouchScreenButton" parent="colors_sub_menu"]
+position = Vector2( 77, -32 )
+normal = ExtResource( 76 )
+
+[node name="cursor1" type="TouchScreenButton" parent="colors_sub_menu"]
+position = Vector2( 77, -18 )
+normal = ExtResource( 76 )
+
+[node name="cursor2" type="TouchScreenButton" parent="colors_sub_menu"]
+position = Vector2( 77, -4 )
+normal = ExtResource( 76 )
+
+[node name="animations" parent="colors_sub_menu" instance=ExtResource( 77 )]
+position = Vector2( -88, -44 )
+scale = Vector2( 5, 5 )
+frame = 3
+playing = true
+
+[node name="back_button" type="TouchScreenButton" parent="colors_sub_menu"]
+position = Vector2( -88, 20 )
+normal = ExtResource( 82 )
+pressed = ExtResource( 79 )
+
+[node name="reset_button" type="TouchScreenButton" parent="colors_sub_menu"]
+position = Vector2( -24, 20 )
+normal = ExtResource( 83 )
+pressed = ExtResource( 78 )
+
+[node name="RGB_button" type="TouchScreenButton" parent="colors_sub_menu"]
+visible = false
+position = Vector2( 38, 20 )
+normal = ExtResource( 84 )
+pressed = ExtResource( 85 )
+
+[node name="HSV_button" type="TouchScreenButton" parent="colors_sub_menu"]
+position = Vector2( 38, 20 )
+normal = ExtResource( 81 )
+pressed = ExtResource( 80 )
+
+[connection signal="released" from="menu/continue_level" to="menu" method="_on_continue_released"]
+[connection signal="released" from="menu/shuffle_level" to="menu" method="_on_shuffle_level_released"]
+[connection signal="released" from="menu/spirits" to="menu" method="_on_spirits_released"]
+[connection signal="released" from="menu/colors" to="menu" method="_on_colors_released"]
+[connection signal="released" from="spirits/reset" to="spirits" method="_on_reset_released"]
+[connection signal="released" from="spirits/back" to="spirits" method="_on_back_released"]
+[connection signal="released" from="spirit_sub_menu/back_button" to="spirit_sub_menu" method="_on_back_button_released"]
+[connection signal="released" from="colors/back" to="colors" method="_on_back_released"]
+[connection signal="released" from="colors_sub_menu/back_button" to="colors_sub_menu" method="_on_back_button_released"]
+[connection signal="released" from="colors_sub_menu/reset_button" to="colors_sub_menu" method="_on_reset_button_released"]
+[connection signal="released" from="colors_sub_menu/RGB_button" to="colors_sub_menu" method="_on_RGB_button_released"]
+[connection signal="released" from="colors_sub_menu/HSV_button" to="colors_sub_menu" method="_on_HSV_button_released"]
